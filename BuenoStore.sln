@@ -9,9 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{77503EDA-9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuenoStore.Usuario.Api", "BuenoStore.Usuario.Api\BuenoStore.Usuario.Api.csproj", "{8E59CD13-DA20-429E-B460-735FD37CA93F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuenoStore.Catalogo.Api", "BuenoStore.Catalogo.Api\BuenoStore.Catalogo.Api.csproj", "{53A0997E-7156-4A74-B2AE-22BB93C60B6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuenoStore.Catalogo.Api", "BuenoStore.Catalogo.Api\BuenoStore.Catalogo.Api.csproj", "{53A0997E-7156-4A74-B2AE-22BB93C60B6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuenoStore.BuildingBlocks", "BuenoStore.BuildingBlocks\BuenoStore.BuildingBlocks.csproj", "{AF908F85-CAF3-488D-B920-A136A99A56DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuenoStore.BuildingBlocks", "BuenoStore.BuildingBlocks\BuenoStore.BuildingBlocks.csproj", "{AF908F85-CAF3-488D-B920-A136A99A56DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuenoStore.Carrinho.Api", "BuenoStore.Carrinho.Api\BuenoStore.Carrinho.Api.csproj", "{B89FF60F-8A5C-4032-B4B4-B2BA34359E39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{AF908F85-CAF3-488D-B920-A136A99A56DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF908F85-CAF3-488D-B920-A136A99A56DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF908F85-CAF3-488D-B920-A136A99A56DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89FF60F-8A5C-4032-B4B4-B2BA34359E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89FF60F-8A5C-4032-B4B4-B2BA34359E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89FF60F-8A5C-4032-B4B4-B2BA34359E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89FF60F-8A5C-4032-B4B4-B2BA34359E39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{8E59CD13-DA20-429E-B460-735FD37CA93F} = {AAE27084-2867-46C0-A090-1BF2166917CE}
 		{53A0997E-7156-4A74-B2AE-22BB93C60B6B} = {AAE27084-2867-46C0-A090-1BF2166917CE}
 		{AF908F85-CAF3-488D-B920-A136A99A56DE} = {AAE27084-2867-46C0-A090-1BF2166917CE}
+		{B89FF60F-8A5C-4032-B4B4-B2BA34359E39} = {AAE27084-2867-46C0-A090-1BF2166917CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D298CCE1-D1C3-4D82-98A2-A30EFA6E0E4C}
