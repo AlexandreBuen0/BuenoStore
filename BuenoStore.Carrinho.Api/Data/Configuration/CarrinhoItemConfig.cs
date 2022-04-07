@@ -1,4 +1,4 @@
-﻿using BuenoStore.Carrinho.Api.Model;
+﻿using BuenoStore.Carrinho.Api.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -1,4 +1,4 @@
-﻿using BuenoStore.Carrinho.Api.Model;
+﻿using BuenoStore.Carrinho.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BuenoStore.Carrinho.Api.Data
@@ -9,7 +9,7 @@ namespace BuenoStore.Carrinho.Api.Data
             : base(options) { }
 
         public DbSet<CarrinhoItem> CarrinhoItens { get; set; }
-        public DbSet<Model.Carrinho> Carrinho { get; set; }
+        public DbSet<Models.Carrinho> Carrinho { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

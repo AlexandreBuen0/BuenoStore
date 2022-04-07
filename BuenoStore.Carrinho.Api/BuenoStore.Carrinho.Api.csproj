@@ -18,4 +18,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BuenoStore.BuildingBlocks.Api\BuenoStore.BuildingBlocks.Api.csproj" />
+  </ItemGroup>
+
 </Project>

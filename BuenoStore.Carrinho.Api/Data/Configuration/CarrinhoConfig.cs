@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BuenoStore.Carrinho.Api.Data.Configuration
 {
-    public class CarrinhoConfig : IEntityTypeConfiguration<Model.Carrinho>
+    public class CarrinhoConfig : IEntityTypeConfiguration<Models.Carrinho>
     {
-        public void Configure(EntityTypeBuilder<Model.Carrinho> builder)
+        public void Configure(EntityTypeBuilder<Models.Carrinho> builder)
         {
             builder.HasKey(c => c.Id);
 
