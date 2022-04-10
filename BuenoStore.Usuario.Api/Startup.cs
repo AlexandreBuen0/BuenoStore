@@ -15,9 +15,7 @@ namespace BuenoStore.Usuario.Api
                 .AddEnvironmentVariables();
 
             if (hostEnvironment.IsDevelopment())
-            {
                 builder.AddUserSecrets<Startup>();
-            }
 
             Configuration = builder.Build();
         }

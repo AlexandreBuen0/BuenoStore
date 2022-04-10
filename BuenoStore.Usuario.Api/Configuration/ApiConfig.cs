@@ -6,6 +6,14 @@
         {
             services.AddControllers();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Total", builder => builder
+                       .AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader());
+            });
+
             return services;
         }
 
@@ -17,6 +25,8 @@
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("Total");
 
             app.UseIdentityConfiguration();
 
