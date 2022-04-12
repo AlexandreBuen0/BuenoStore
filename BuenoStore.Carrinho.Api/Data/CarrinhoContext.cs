@@ -1,4 +1,5 @@
 ﻿using BuenoStore.Carrinho.Api.Models;
+using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
 namespace BuenoStore.Carrinho.Api.Data
@@ -13,6 +14,8 @@ namespace BuenoStore.Carrinho.Api.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Ignore<ValidationResult>();
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CarrinhoContext).Assembly);
         }
     }

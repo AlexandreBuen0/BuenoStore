@@ -2,11 +2,13 @@
 using BuenoStore.BuildingBlocks.Api.Usuario.Interface;
 using BuenoStore.Carrinho.Api.Data;
 using BuenoStore.Carrinho.Api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BuenoStore.Carrinho.Api.Controllers
 {
+    [Authorize]
     public class CarrinhoController : MainController
     {
         private readonly IAspNetUser _user;
@@ -19,17 +21,26 @@ namespace BuenoStore.Carrinho.Api.Controllers
         }
 
         [HttpGet("carrinho")]
-        public async Task<Models.Carrinho> ObterCarrinho() => await ObterCarrinhoUsuario() ?? new Models.Carrinho();
+        public async Task<Models.Carrinho> ObterCarrinho()
+        {
+            var carrinho = await ObterCarrinhoUsuario();
+            if (carrinho is null)
+            {
+                return new Models.Carrinho();
+            }
+            
+            return carrinho;
+        }
 
         [HttpPost("carrinho")]
-        public async Task<IActionResult> AdicionarItemCarrinho(CarrinhoItem item)
+        public async Task<IActionResult> AdicionarItemCarrinho(CarrinhoItem carrinhoItem)
         {
             var carrinho = await ObterCarrinhoUsuario();
 
             if (carrinho is null)
-                NovoCarrinho(item);
+                NovoCarrinho(carrinhoItem);
             else
-                CarrinhoExistente(carrinho, item);
+                CarrinhoExistente(carrinho, carrinhoItem);
 
             if (!OperacaoEhValida()) 
                 return CustomResponse();
@@ -109,7 +120,7 @@ namespace BuenoStore.Carrinho.Api.Controllers
 
             _context.Carrinho.Update(carrinho);
         }
-        
+
         private async Task<CarrinhoItem> ObterItemCarrinhoValidado(Guid produtoId, Models.Carrinho carrinho, CarrinhoItem item = null)
         {
             if (item is not null && produtoId != item.ProdutoId)
@@ -124,7 +135,7 @@ namespace BuenoStore.Carrinho.Api.Controllers
                 return null;
             }
 
-            var itemCarrinho = await _context.CarrinhoItens.FirstOrDefaultAsync(x => x.CarrinhoId == carrinho.Id && 
+            var itemCarrinho = await _context.CarrinhoItens.FirstOrDefaultAsync(x => x.CarrinhoId == carrinho.Id &&
                                                                                      x.ProdutoId == produtoId);
 
             if (itemCarrinho is null || !carrinho.ItemExistenteNoCarrinho(itemCarrinho))
@@ -135,7 +146,7 @@ namespace BuenoStore.Carrinho.Api.Controllers
 
             return itemCarrinho;
         }
-        
+
         private async Task SalvarCarrinho()
         {
             var result = await _context.SaveChangesAsync();

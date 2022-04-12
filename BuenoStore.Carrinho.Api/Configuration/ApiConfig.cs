@@ -1,5 +1,7 @@
-﻿using BuenoStore.Carrinho.Api.Data;
+﻿using BuenoStore.BuildingBlocks.Token;
+using BuenoStore.Carrinho.Api.Data;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace BuenoStore.Carrinho.Api.Configuration
 {
@@ -10,7 +12,10 @@ namespace BuenoStore.Carrinho.Api.Configuration
             services.AddDbContext<CarrinhoContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(o =>
+            {
+                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
 
             services.AddCors(options =>
             {
@@ -31,6 +36,8 @@ namespace BuenoStore.Carrinho.Api.Configuration
             app.UseRouting();
 
             app.UseCors("Total");
+
+            app.UseAuthConfiguration();
 
             app.UseEndpoints(endpoints =>
             {

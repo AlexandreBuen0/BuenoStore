@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuenoStore.BuildingBlocks",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuenoStore.Carrinho.Api", "BuenoStore.Carrinho.Api\BuenoStore.Carrinho.Api.csproj", "{B89FF60F-8A5C-4032-B4B4-B2BA34359E39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuenoStore.Pedido.Api", "BuenoStore.Pedido.Api\BuenoStore.Pedido.Api.csproj", "{04ABD0C7-C9B0-439E-A0C8-E7103FECA0CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuenoStore.Pedido.Api", "BuenoStore.Pedido.Api\BuenoStore.Pedido.Api.csproj", "{04ABD0C7-C9B0-439E-A0C8-E7103FECA0CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuenoStore.BuildingBlocks.Api", "BuenoStore.BuildingBlocks.Api\BuenoStore.BuildingBlocks.Api.csproj", "{3A8AA2A8-3E3D-4473-B274-AE92EE6BB31B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuenoStore.BuildingBlocks.Api", "BuenoStore.BuildingBlocks.Api\BuenoStore.BuildingBlocks.Api.csproj", "{3A8AA2A8-3E3D-4473-B274-AE92EE6BB31B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuenoStore.Gateway.Api", "BuenoStore.Gateway.Carrinho\BuenoStore.Gateway.Api.csproj", "{E6FA9A48-630D-4087-92D7-DEDB8E4D01C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{3A8AA2A8-3E3D-4473-B274-AE92EE6BB31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A8AA2A8-3E3D-4473-B274-AE92EE6BB31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A8AA2A8-3E3D-4473-B274-AE92EE6BB31B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6FA9A48-630D-4087-92D7-DEDB8E4D01C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FA9A48-630D-4087-92D7-DEDB8E4D01C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FA9A48-630D-4087-92D7-DEDB8E4D01C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FA9A48-630D-4087-92D7-DEDB8E4D01C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{B89FF60F-8A5C-4032-B4B4-B2BA34359E39} = {AAE27084-2867-46C0-A090-1BF2166917CE}
 		{04ABD0C7-C9B0-439E-A0C8-E7103FECA0CC} = {AAE27084-2867-46C0-A090-1BF2166917CE}
 		{3A8AA2A8-3E3D-4473-B274-AE92EE6BB31B} = {AAE27084-2867-46C0-A090-1BF2166917CE}
+		{E6FA9A48-630D-4087-92D7-DEDB8E4D01C7} = {AAE27084-2867-46C0-A090-1BF2166917CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D298CCE1-D1C3-4D82-98A2-A30EFA6E0E4C}

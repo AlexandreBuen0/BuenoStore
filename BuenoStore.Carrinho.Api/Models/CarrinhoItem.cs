@@ -1,4 +1,5 @@
 ﻿using BuenoStore.Carrinho.Api.Models.Validation;
+using System.Runtime.Serialization;
 
 namespace BuenoStore.Carrinho.Api.Models
 {
@@ -18,7 +19,7 @@ namespace BuenoStore.Carrinho.Api.Models
 
         public Guid CarrinhoId { get; set; }
 
-        public Carrinho Carrinho { get; set; }
+        public Carrinho? Carrinho { get; set; }
 
         internal void VincularCarrinho(Guid carrinhoId) => CarrinhoId = carrinhoId;
 

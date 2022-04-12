@@ -1,4 +1,5 @@
-﻿using BuenoStore.Carrinho.Api.Configuration;
+﻿using BuenoStore.BuildingBlocks.Token;
+using BuenoStore.Carrinho.Api.Configuration;
 
 namespace BuenoStore.Carrinho.Api
 {
@@ -23,6 +24,8 @@ namespace BuenoStore.Carrinho.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApiConfiguration(Configuration);
+
+            services.AddJwtConfiguration(Configuration);
 
             services.AddSwaggerConfiguration();
 

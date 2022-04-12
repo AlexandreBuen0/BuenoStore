@@ -1,4 +1,6 @@
-﻿namespace BuenoStore.Usuario.Api.Configuration
+﻿using BuenoStore.BuildingBlocks.Token;
+
+namespace BuenoStore.Usuario.Api.Configuration
 {
     public static class ApiConfig
     {
@@ -28,7 +30,7 @@
 
             app.UseCors("Total");
 
-            app.UseIdentityConfiguration();
+            app.UseAuthConfiguration();
 
             app.UseEndpoints(endpoints =>
             {

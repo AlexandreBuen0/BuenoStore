@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BuenoStore.BuildingBlocks.Api\BuenoStore.BuildingBlocks.Api.csproj" />
     <ProjectReference Include="..\BuenoStore.BuildingBlocks\BuenoStore.BuildingBlocks.csproj" />
   </ItemGroup>
 
