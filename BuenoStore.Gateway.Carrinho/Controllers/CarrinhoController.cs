@@ -55,7 +55,7 @@ namespace BuenoStore.Gateway.Api.Controllers
                 return;
             }
 
-            if (quantidade > produto.QuantidadeEstoque) 
+            if (quantidade > produto.QuantidadeEstoque)
                 AdicionarErroProcessamento($"O produto {produto.Nome} possui {produto.QuantidadeEstoque} unidades em estoque, você selecionou {quantidade}");
         }
     }

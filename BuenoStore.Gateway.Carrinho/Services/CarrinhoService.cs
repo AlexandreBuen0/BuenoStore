@@ -31,7 +31,7 @@ namespace BuenoStore.Gateway.Api.Services
 
             var response = await _httpClient.PostAsync("/carrinho/", itemContent);
 
-            if (!TratarErrosResponse(response)) 
+            if (!TratarErrosResponse(response))
                 return await DeserializarObjetoResponse<ResponseResult>(response);
 
             return RetornoOk();

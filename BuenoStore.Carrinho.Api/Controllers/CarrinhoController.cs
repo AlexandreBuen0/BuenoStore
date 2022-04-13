@@ -28,7 +28,7 @@ namespace BuenoStore.Carrinho.Api.Controllers
             {
                 return new Models.Carrinho();
             }
-            
+
             return carrinho;
         }
 
@@ -42,7 +42,7 @@ namespace BuenoStore.Carrinho.Api.Controllers
             else
                 CarrinhoExistente(carrinho, carrinhoItem);
 
-            if (!OperacaoEhValida()) 
+            if (!OperacaoEhValida())
                 return CustomResponse();
 
             await SalvarCarrinho();
@@ -94,7 +94,7 @@ namespace BuenoStore.Carrinho.Api.Controllers
                 .Include(c => c.Itens)
                 .FirstOrDefaultAsync(c => c.ClienteId == _user.ObterUsuarioId());
         }
-        
+
         private void NovoCarrinho(CarrinhoItem item)
         {
             var usuarioId = _user.ObterUsuarioId();
@@ -105,7 +105,7 @@ namespace BuenoStore.Carrinho.Api.Controllers
             ValidarCarrinho(carrinho);
             _context.Carrinho.Add(carrinho);
         }
-        
+
         private void CarrinhoExistente(Models.Carrinho carrinho, CarrinhoItem item)
         {
             var produtoItemExistente = carrinho.ItemExistenteNoCarrinho(item);
@@ -152,10 +152,10 @@ namespace BuenoStore.Carrinho.Api.Controllers
             var result = await _context.SaveChangesAsync();
             if (result <= 0) AdicionarErroProcessamento("Não foi possível persistir os dados no banco");
         }
-        
+
         private bool ValidarCarrinho(Models.Carrinho carrinho)
         {
-            if (carrinho.CarrinhoEhValido()) 
+            if (carrinho.CarrinhoEhValido())
                 return true;
 
             carrinho.ValidationResult.Errors.ToList().ForEach(x => AdicionarErroProcessamento(x.ErrorMessage));

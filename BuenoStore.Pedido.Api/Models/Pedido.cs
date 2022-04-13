@@ -19,7 +19,7 @@ namespace BuenoStore.Pedido.Api.Models
         public decimal ValorTotal { get; private set; }
         public DateTime DataCadastro { get; private set; }
         public PedidoStatus PedidoStatus { get; private set; }
-        
+
         private readonly List<PedidoItem> _pedidoItems;
         public IReadOnlyCollection<PedidoItem> PedidoItems => _pedidoItems;
 

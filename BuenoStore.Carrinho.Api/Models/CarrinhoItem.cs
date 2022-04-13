@@ -1,5 +1,4 @@
 ﻿using BuenoStore.Carrinho.Api.Models.Validation;
-using System.Runtime.Serialization;
 
 namespace BuenoStore.Carrinho.Api.Models
 {

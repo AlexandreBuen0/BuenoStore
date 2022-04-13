@@ -24,7 +24,7 @@ namespace BuenoStore.BuildingBlocks.Api.Controllers
         protected ActionResult CustomResponse(ModelStateDictionary modelState)
         {
             var erros = modelState.Values.SelectMany(e => e.Errors);
-            
+
             foreach (var erro in erros)
                 AdicionarErroProcessamento(erro.ErrorMessage);
 
@@ -48,7 +48,7 @@ namespace BuenoStore.BuildingBlocks.Api.Controllers
 
         protected bool ResponsePossuiErros(ResponseResult resposta)
         {
-            if (resposta is null || !resposta.Errors.Mensagens.Any()) 
+            if (resposta is null || !resposta.Errors.Mensagens.Any())
                 return false;
 
             foreach (var mensagem in resposta.Errors.Mensagens)

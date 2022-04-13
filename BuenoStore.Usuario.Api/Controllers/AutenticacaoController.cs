@@ -29,7 +29,7 @@ namespace BuenoStore.Usuario.Api.Controllers
         [HttpPost("registrar-usuario")]
         public async Task<ActionResult> RegistrarUsuario(RegistrarUsuarioModel registrarUsuario)
         {
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid)
                 return CustomResponse(ModelState);
 
             var identityUser = new IdentityUser
@@ -52,7 +52,7 @@ namespace BuenoStore.Usuario.Api.Controllers
         [HttpPost("login")]
         public async Task<ActionResult> Login(LogarModel logar)
         {
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid)
                 return CustomResponse(ModelState);
 
             var isPersistent = false;
@@ -103,7 +103,7 @@ namespace BuenoStore.Usuario.Api.Controllers
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Chave);
-            
+
             var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
             {
                 Issuer = _appSettings.SistemaEmissor,

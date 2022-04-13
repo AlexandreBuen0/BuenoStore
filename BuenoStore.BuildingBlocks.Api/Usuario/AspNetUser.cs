@@ -20,7 +20,7 @@ namespace BuenoStore.BuildingBlocks.Api.Usuario
 
         public string ObterUsuarioToken() => EstaAutenticado() ? _accessor.HttpContext.User.ObterTokenUsuario() : "";
 
-        public bool EstaAutenticado() =>_accessor.HttpContext.User.Identity.IsAuthenticated;
+        public bool EstaAutenticado() => _accessor.HttpContext.User.Identity.IsAuthenticated;
 
         public HttpContext ObterHttpContext() => _accessor.HttpContext;
     }
