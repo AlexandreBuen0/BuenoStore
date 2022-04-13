@@ -11,13 +11,13 @@ using System.Text;
 
 namespace BuenoStore.Usuario.Api.Controllers
 {
-    public class AuthController : BaseController
+    public class AutenticacaoController : BaseController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
 
-        public AuthController(SignInManager<IdentityUser> signInManager,
+        public AutenticacaoController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
                               IOptions<AppSettings> appSettings)
         {
