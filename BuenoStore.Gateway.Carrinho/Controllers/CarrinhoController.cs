@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BuenoStore.Gateway.Api.Controllers
 {
     [Authorize]
-    public class CarrinhoController : MainController
+    public class CarrinhoController : BaseController
     {
         private readonly ICarrinhoService _carrinhoService;
         private readonly ICatalogoService _catalogoService;
@@ -43,7 +43,7 @@ namespace BuenoStore.Gateway.Api.Controllers
 
         private async Task ValidarItemCarrinho(ProdutoViewModel produto, int quantidade)
         {
-            if (produto == null)
+            if (produto is null)
                 AdicionarErroProcessamento("Produto não encontrado!");
 
             var carrinho = await _carrinhoService.ObterCarrinho();
@@ -51,7 +51,7 @@ namespace BuenoStore.Gateway.Api.Controllers
 
             if (itemCarrinho is not null && itemCarrinho.Quantidade + quantidade > produto.QuantidadeEstoque)
             {
-                AdicionarErroProcessamento($"O produto {produto.Nome} possui {produto.QuantidadeEstoque} unidades em estoque, você selecionou {quantidade}");
+                AdicionarErroProcessamento($"O produto {produto.Nome} possui {produto.QuantidadeEstoque} unidades em estoque, você selecionou {itemCarrinho.Quantidade + quantidade}");
                 return;
             }
 

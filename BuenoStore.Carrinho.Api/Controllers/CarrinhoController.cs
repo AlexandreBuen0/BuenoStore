@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BuenoStore.Carrinho.Api.Controllers
 {
     [Authorize]
-    public class CarrinhoController : MainController
+    public class CarrinhoController : BaseController
     {
         private readonly IAspNetUser _user;
         private readonly CarrinhoContext _context;
@@ -24,10 +24,9 @@ namespace BuenoStore.Carrinho.Api.Controllers
         public async Task<Models.Carrinho> ObterCarrinho()
         {
             var carrinho = await ObterCarrinhoUsuario();
+            
             if (carrinho is null)
-            {
                 return new Models.Carrinho();
-            }
 
             return carrinho;
         }
@@ -53,8 +52,9 @@ namespace BuenoStore.Carrinho.Api.Controllers
         public async Task<IActionResult> AtualizarItemCarrinho(Guid produtoId, CarrinhoItem item)
         {
             var carrinho = await ObterCarrinhoUsuario();
+            
             var itemCarrinho = await ObterItemCarrinhoValidado(produtoId, carrinho, item);
-            if (itemCarrinho == null) return CustomResponse();
+            if (itemCarrinho is null) return CustomResponse();
 
             carrinho.AtualizarUnidades(itemCarrinho, item.Quantidade);
 

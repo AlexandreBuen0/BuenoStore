@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BuenoStore.Gateway.Api.Controllers
 {
-    public class CatalogoController : MainController
+    public class CatalogoController : BaseController
     {
         private readonly ICatalogoService _catalogoService;
 

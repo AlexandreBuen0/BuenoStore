@@ -7,10 +7,14 @@ namespace BuenoStore.Gateway.Api.Services
 {
     public abstract class ServiceBase
     {
-        protected StringContent ObterConteudo(object dado) => new StringContent(JsonConvert.SerializeObject(dado), Encoding.UTF8, "application/json");
+        protected StringContent ObterConteudo(object dado) 
+            => new StringContent(JsonConvert.SerializeObject(dado), Encoding.UTF8, "application/json");
 
         protected async Task<T> DeserializarObjetoResponse<T>(HttpResponseMessage responseMessage)
             => JsonConvert.DeserializeObject<T>(await responseMessage.Content.ReadAsStringAsync());
+
+        protected ResponseResult RetornoOk() 
+            => new ResponseResult();
 
         protected bool TratarErrosResponse(HttpResponseMessage response)
         {
@@ -19,11 +23,6 @@ namespace BuenoStore.Gateway.Api.Services
 
             response.EnsureSuccessStatusCode();
             return true;
-        }
-
-        protected ResponseResult RetornoOk()
-        {
-            return new ResponseResult();
         }
     }
 }

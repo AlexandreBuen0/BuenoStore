@@ -1,6 +1,6 @@
 ﻿namespace BuenoStore.Usuario.Api.Model.Usuario
 {
-    public class LogarModel
+    public class LoginModel
     {
         public string Email { get; set; }
 

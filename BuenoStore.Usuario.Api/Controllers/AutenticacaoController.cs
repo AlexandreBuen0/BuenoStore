@@ -1,4 +1,5 @@
-﻿using BuenoStore.Usuario.Api.Configuration;
+﻿using BuenoStore.BuildingBlocks.Api.Controllers;
+using BuenoStore.Usuario.Api.Configuration;
 using BuenoStore.Usuario.Api.Model.Token;
 using BuenoStore.Usuario.Api.Model.Usuario;
 using Microsoft.AspNetCore.Identity;
@@ -13,13 +14,16 @@ namespace BuenoStore.Usuario.Api.Controllers
 {
     public class AutenticacaoController : BaseController
     {
+        private const bool isPersistent = false;
+        private const bool lockoutOnFailure = true;
+
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
 
         public AutenticacaoController(SignInManager<IdentityUser> signInManager,
-                              UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings)
+                                      UserManager<IdentityUser> userManager,
+                                      IOptions<AppSettings> appSettings)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -50,13 +54,10 @@ namespace BuenoStore.Usuario.Api.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult> Login(LogarModel logar)
+        public async Task<ActionResult> Login(LoginModel logar)
         {
             if (!ModelState.IsValid)
                 return CustomResponse(ModelState);
-
-            var isPersistent = false;
-            var lockoutOnFailure = true;
 
             var result = await _signInManager.PasswordSignInAsync(logar.Email, logar.Senha, isPersistent, lockoutOnFailure);
 

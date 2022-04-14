@@ -15,15 +15,9 @@ namespace BuenoStore.Catalogo.Api.Controllers
         }
 
         [HttpGet("catalogo/produtos")]
-        public async Task<IEnumerable<Produto>> ObterTodos()
-        {
-            return await _produtoRepository.ObterTodos();
-        }
+        public async Task<IEnumerable<Produto>> ObterTodos() => await _produtoRepository.ObterTodos();
 
         [HttpGet("catalogo/produtos/{id}")]
-        public async Task<Produto> ObterPorId(Guid id)
-        {
-            return await _produtoRepository.ObterPorId(id);
-        }
+        public async Task<Produto> ObterPorId(Guid id) => await _produtoRepository.ObterPorId(id);
     }
 }
